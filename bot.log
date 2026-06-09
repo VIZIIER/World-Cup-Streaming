@@ -1,0 +1,58 @@
+2026-06-09 12:28:41,426 [CRITICAL] iptv_bot: DISCORD_TOKEN not set. Add it to your .env file.
+2026-06-09 12:29:05,545 [CRITICAL] iptv_bot: DISCORD_TOKEN not set. Add it to your .env file.
+2026-06-09 12:30:54,963 [WARNING] discord.ext.commands.bot: Privileged message content intent is missing, commands may not work as expected.
+2026-06-09 12:30:54,963 [INFO] discord.client: logging in using static token
+2026-06-09 12:30:56,435 [INFO] iptv_bot: Slash commands synced globally.
+2026-06-09 12:30:57,335 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: cb70f4452feb8da3be6e6f1f97a73866).
+2026-06-09 12:30:59,413 [INFO] iptv_bot: Logged in as Veronica#3449 (ID: 1078697208934846485)
+2026-06-09 12:31:45,688 [ERROR] iptv_bot: IPTV fetch error: Cannot connect to host your-iptv-provider.com:80 ssl:default [getaddrinfo failed]
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\files\.venv\lib\site-packages\aiohttp\connector.py", line 1571, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+  File "C:\Users\Administrator\Downloads\files\.venv\lib\site-packages\aiohttp\connector.py", line 1181, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+  File "C:\Users\Administrator\Downloads\files\.venv\lib\site-packages\aiohttp\connector.py", line 1212, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+  File "C:\Users\Administrator\Downloads\files\.venv\lib\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 863, in getaddrinfo
+    return await self.run_in_executor(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Downloads\files\bot.py", line 166, in matches_cmd
+    live_matches = await bot.iptv.get_live_matches()
+  File "C:\Users\Administrator\Downloads\files\iptv_client.py", line 92, in get_live_matches
+    channels = await self._fetch_m3u()
+  File "C:\Users\Administrator\Downloads\files\iptv_client.py", line 104, in _fetch_m3u
+    async with session.get(self.config.IPTV_M3U_URL) as resp:
+  File "C:\Users\Administrator\Downloads\files\.venv\lib\site-packages\aiohttp\client.py", line 1683, in __aenter__
+    self._resp: _RetType_co = await self._coro
+  File "C:\Users\Administrator\Downloads\files\.venv\lib\site-packages\aiohttp\client.py", line 856, in _request
+    resp = await handler(req)
+  File "C:\Users\Administrator\Downloads\files\.venv\lib\site-packages\aiohttp\client.py", line 810, in _connect_and_send_request
+    conn = await self._connector.connect(
+  File "C:\Users\Administrator\Downloads\files\.venv\lib\site-packages\aiohttp\connector.py", line 657, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "C:\Users\Administrator\Downloads\files\.venv\lib\site-packages\aiohttp\connector.py", line 1242, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "C:\Users\Administrator\Downloads\files\.venv\lib\site-packages\aiohttp\connector.py", line 1577, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host your-iptv-provider.com:80 ssl:default [getaddrinfo failed]
+2026-06-09 12:37:04,936 [INFO] iptv_bot: Signal 2 received — shutting down.
+2026-06-09 12:37:04,936 [INFO] iptv_bot: Shutting down — disconnecting all voice clients …
+2026-06-09 12:37:04,951 [ERROR] asyncio: Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000025D256AE9E0>
+2026-06-09 12:37:05,445 [WARNING] discord.ext.commands.bot: Privileged message content intent is missing, commands may not work as expected.
+2026-06-09 12:37:05,446 [INFO] discord.client: logging in using static token
+2026-06-09 12:37:06,471 [INFO] iptv_bot: Slash commands synced globally.
+2026-06-09 12:37:07,383 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 07bf81b849fe5245e4c44bdad994cb40).
+2026-06-09 12:37:09,461 [INFO] iptv_bot: Logged in as Veronica#3449 (ID: 1078697208934846485)
+2026-06-09 12:37:21,055 [INFO] iptv_client: M3U: fetched 0 channels
+2026-06-09 12:37:21,055 [INFO] iptv_client: Filtered 0 football/World Cup channels
